@@ -29,3 +29,9 @@ Queue.prototype.size = function() {
 };
 
 
+var added = new Queue ();
+console.log(added.enqueue('zero')) // { 'total': 1, 'first': 1, storage: {'0': 'zero'}};
+console.log(added.enqueue('one')) // { 'total': 2, 'first': 2, storage: {0: 'zero', '1': 'one'}};
+
+console.log(added.dequeue()) // 'zero'
+console.log(added) // { 'total': }
