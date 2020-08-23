@@ -7,7 +7,7 @@ var Tree = function(value) {
   newTree.value = value;
 
   // your code here
-  newTree.children = [];  // null is not correct, if the test requires children[0] (index), it should be a data structure that accepts this call method
+  newTree.children = []; // null is not correct, if the test requires children[0] (index), it should be a data structure that accepts this call method
   // both addChild and contains are properties of treeMethods
   // add these properties so var Tree can call on addChild and contains (Tree.addChild && Tree.contains)
   _.extend(newTree, treeMethods);
@@ -19,6 +19,7 @@ var Tree = function(value) {
 
 var treeMethods = {};
 
+// constant time complexity
 treeMethods.addChild = function(value) { // 5
   // create a variable to store the tree node
   // tree should take in value as a parameter
@@ -31,19 +32,17 @@ treeMethods.addChild = function(value) { // 5
 // o : return boolean true or false
 // c : none
 // e : if target is undefined
+
+// linear time complexity
 treeMethods.contains = function(target) {
-  // grab the value of child using this
-  var childValue = this.value;
-  // if this.value does equal target
-  if (childValue === target) {
-    // return true
+  // check if value === target
+  if (this.value === target) {
     return true;
-  } else {
-    // else, for i = 0, i < this.children.length, i++
-    for (i = 0; i < this.children.length; i++) {
-      // increment this.children[i]
-      // __.contains(target)
-      this.children[i].contains(target);
+  } else if (this.children.length > 0) {
+    for (var i = 0; i < this.children.length; i++) {
+      if (this.children[i].contains(target)) {
+        return true;
+      }
     }
   }
   // return false
@@ -54,4 +53,6 @@ treeMethods.contains = function(target) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ addChild: constant
+ contains: linear
  */

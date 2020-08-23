@@ -15,20 +15,29 @@ var LimitedArray = function(limit) {
   var storage = [];
 
   var limitedArray = {};
+  // this method will grab the "property" for us
   limitedArray.get = function(index) {
     checkLimit(index);
     return storage[index];
+    console.log(storage);
   };
+  // storage = [danny, green]
+  // .get will return a value at that index
+
+  // creates an array tuple within limitedArray
   limitedArray.set = function(index, value) {
     checkLimit(index);
     storage[index] = value;
   };
+
+  // able to grab the element, index, and collection
   limitedArray.each = function(callback) {
     for (var i = 0; i < storage.length; i++) {
       callback(storage[i], i, storage);
     }
   };
 
+  // to ensure we don't pass limit '8'
   var checkLimit = function(index) {
     if (typeof index !== 'number') {
       throw new Error('setter requires a numeric index for its first argument');

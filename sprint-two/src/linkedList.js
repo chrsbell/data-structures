@@ -7,6 +7,7 @@ var LinkedList = function() {
   // Outputs are integers
   // Constraints: if head is null, add the value to the tail
   // Edge cases: If value is undefined or list is empty
+  // constant time complexity
   list.addToTail = function(value) { //integer input
     // Create node with value parameter
     var node = Node(value);
@@ -19,14 +20,15 @@ var LinkedList = function() {
       list.tail.next = null;
       list.head.next = list.tail;
     }
-      // Else if the head is not null, set list.tail.next equal to null and list.tail equal to node
-   // {node.value ?? = value ??,  node.next = null}
+    // Else if the head is not null, set list.tail.next equal to null and list.tail equal to node
+    // {node.value ?? = value ??,  node.next = null}
 
   };
   // i: 5
   // o: 5
   // c
   // e
+  // constant time complexity
   list.removeHead = function() {
     // var former head, set equal to head.value
     var formerHead = list.head.value;
@@ -76,6 +78,9 @@ var Node = function(value) {
 
 /*
  * Complexity: What is the time complexity of the above functions?
+ addToTail: constant
+ removeHead: constant
+ contains: linear
  */
 
 // How to delete node??
