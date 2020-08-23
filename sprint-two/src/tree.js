@@ -28,6 +28,7 @@ treeMethods.addChild = function(value) { // 5
   this.children.push(node); // this should be the whole node
 };
 
+
 // i : tree.contains(5)).to.equal(true);
 // o : return boolean true or false
 // c : none
