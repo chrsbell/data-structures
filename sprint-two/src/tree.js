@@ -23,9 +23,9 @@ var treeMethods = {};
 treeMethods.addChild = function(value) { // 5
   // create a variable to store the tree node
   // tree should take in value as a parameter
-  var test = Tree(value);
+  var node = Tree(value);
   // pass a variable into children array
-  this.children.push(test); // this should be the whole node
+  this.children.push(node); // this should be the whole node
 };
 
 // i : tree.contains(5)).to.equal(true);
